@@ -1,0 +1,77 @@
+html, *{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#calculator{
+    background-color: black;
+    width: 50%;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0px rgba(1, 1, 1, 0.200);
+}
+
+.title{
+    color: white;
+}
+
+.subtitle{
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: white;
+}
+
+.display{
+    background-color: rgb(163, 195, 152);
+    color: black;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    text-align: right;
+}
+
+.button{
+    background-color: gray;
+    color: white;
+    padding: .5rem;
+    width: 3rem;
+    height: 2.5rem;
+    margin: .1rem;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.btn-white{
+    background-color: white;
+    color: black;
+}
+
+.btn-orange{
+    background-color: orange;
+    color: black;
+}
+
+.btn-red{
+    background-color: red;
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(34, 34, 34);
+}
+
+.btn-white:hover{
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.btn-orange:hover{
+    background-color: rgb(140, 91, 0);
+}
+
+.btn-red:hover{
+    background-color: rgb(111, 0, 0);
+}
