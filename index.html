@@ -19,37 +19,41 @@
         <div class="buttonContainer">
             <div class="row">
                 <button class="button btn-white" v-on:click="OFFPressed()">OFF</button>
-                <button class="button" v-on:click="numberPressed(7)">7</button>
-                <button class="button" v-on:click="numberPressed(8)">8</button>
-                <button class="button" v-on:click="numberPressed(9)">9</button>
+                <button class="button" v-on:click="btnNumberPressed(7)">7</button>
+                <button class="button" v-on:click="btnNumberPressed(8)">8</button>
+                <button class="button" v-on:click="btnNumberPressed(9)">9</button>
                 <button class="button btn-white">%</button>
                 <button class="button btn-white">√</button>
             </div>
             <div class="row">
                 <button class="button btn-white">🎵</button>
-                <button class="button" v-on:click="numberPressed(4)">4</button>
-                <button class="button" v-on:click="numberPressed(5)">5</button>
-                <button class="button" v-on:click="numberPressed(6)">6</button>
+                <button class="button" v-on:click="btnNumberPressed(4)">4</button>
+                <button class="button" v-on:click="btnNumberPressed(5)">5</button>
+                <button class="button" v-on:click="btnNumberPressed(6)">6</button>
                 <button class="button btn-white">X</button>
                 <button class="button btn-white">/</button>
             </div>
             <div class="row">
                 <button class="button btn-orange" v-on:click="CEPressed()">CE</button>
-                <button class="button" v-on:click="numberPressed(1)">1</button>
-                <button class="button" v-on:click="numberPressed(2)">2</button>
-                <button class="button" v-on:click="numberPressed(3)">3</button>
-                <button class="button btn-white">+</button>
+                <button class="button" v-on:click="btnNumberPressed(1)">1</button>
+                <button class="button" v-on:click="btnNumberPressed(2)">2</button>
+                <button class="button" v-on:click="btnNumberPressed(3)">3</button>
+                <button class="button btn-white" v-on:click="btnPlusPressed()">+</button>
                 <button class="button btn-white">-</button>
             </div>
             <div class="row">
                 <button class="button btn-orange" v-on:click="ONPressed()">ON</button>
-                <button class="button" v-on:click="numberPressed(0)">0</button>
+                <button class="button" v-on:click="btnNumberPressed(0)">0</button>
                 <button class="button">.</button>
                 <button class="button" v-on:click="plusMinusPressed()">+/-</button>
-                <button class="button btn-white">+</button>
-                <button class="button btn-red">$</button>
+                <button class="button btn-white" v-on:click="btnPlusPressed()">+</button>
+                <button class="button btn-red" v-on:click="btnEqualPressed()">=</button>
             </div>
         </div>
+        <p style="color: white;">FN: {{firstNumber}}</p>
+        <p style="color: white;">OP: {{operation}}</p>
+        <p style="color: white;">SN: {{secondNumber}}</p>
+        <p style="color: white;">Clear Display?: {{clearDisplay}}</p>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="javascript.js"></script>
