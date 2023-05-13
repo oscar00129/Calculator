@@ -18,7 +18,7 @@
         <div class="display">{{displayNumber}}</div>
         <div class="buttonContainer">
             <div class="row">
-                <button class="button btn-white">OFF</button>
+                <button class="button btn-white" v-on:click="OFFPressed()">OFF</button>
                 <button class="button" v-on:click="numberPressed(7)">7</button>
                 <button class="button" v-on:click="numberPressed(8)">8</button>
                 <button class="button" v-on:click="numberPressed(9)">9</button>
@@ -34,7 +34,7 @@
                 <button class="button btn-white">/</button>
             </div>
             <div class="row">
-                <button class="button btn-orange">CE</button>
+                <button class="button btn-orange" v-on:click="CEPressed()">CE</button>
                 <button class="button" v-on:click="numberPressed(1)">1</button>
                 <button class="button" v-on:click="numberPressed(2)">2</button>
                 <button class="button" v-on:click="numberPressed(3)">3</button>
@@ -42,10 +42,10 @@
                 <button class="button btn-white">-</button>
             </div>
             <div class="row">
-                <button class="button btn-orange">ON</button>
+                <button class="button btn-orange" v-on:click="ONPressed()">ON</button>
                 <button class="button" v-on:click="numberPressed(0)">0</button>
                 <button class="button">.</button>
-                <button class="button">+/-</button>
+                <button class="button" v-on:click="plusMinusPressed()">+/-</button>
                 <button class="button btn-white">+</button>
                 <button class="button btn-red">$</button>
             </div>
