@@ -22,16 +22,16 @@
                 <button class="button" v-on:click="btnNumberPressed(7)">7</button>
                 <button class="button" v-on:click="btnNumberPressed(8)">8</button>
                 <button class="button" v-on:click="btnNumberPressed(9)">9</button>
-                <button class="button btn-white">%</button>
-                <button class="button btn-white">√</button>
+                <button class="button btn-white" v-on:click="btnPercentagePressed()">%</button>
+                <button class="button btn-white" v-on:click="btnSquareRootPressed()">√</button>
             </div>
             <div class="row">
-                <button class="button btn-white">🎵</button>
+                <button class="button btn-white">{{sound ? '🔊' : '🔈'}}</button>
                 <button class="button" v-on:click="btnNumberPressed(4)">4</button>
                 <button class="button" v-on:click="btnNumberPressed(5)">5</button>
                 <button class="button" v-on:click="btnNumberPressed(6)">6</button>
-                <button class="button btn-white">X</button>
-                <button class="button btn-white">/</button>
+                <button class="button btn-white" v-on:click="btnMultiplyPressed()">X</button>
+                <button class="button btn-white" v-on:click="btnDividePressed()">/</button>
             </div>
             <div class="row">
                 <button class="button btn-orange" v-on:click="CEPressed()">CE</button>
@@ -39,7 +39,7 @@
                 <button class="button" v-on:click="btnNumberPressed(2)">2</button>
                 <button class="button" v-on:click="btnNumberPressed(3)">3</button>
                 <button class="button btn-white" v-on:click="btnPlusPressed()">+</button>
-                <button class="button btn-white">-</button>
+                <button class="button btn-white" v-on:click="btnMinusPressed()">-</button>
             </div>
             <div class="row">
                 <button class="button btn-orange" v-on:click="ONPressed()">ON</button>

@@ -23,7 +23,6 @@ const app = Vue.createApp({
             }else{
                 this.displayNumber = this.displayNumber + String(number);
             }
-            console.log(number);
         },
         CEPressed(){
             if(!this.isOn) return;
@@ -40,38 +39,75 @@ const app = Vue.createApp({
             if(!this.isOn || this.displayNumber == "0") return;
             this.displayNumber = String(-1 * Number(this.displayNumber))
         },
-        btnPlusPressed(){
-            this.operation = "plus"
-            this.firstNumber = Number(this.displayNumber)
+        btnOperation(operation){
+            if(this.operation){
+                this.secondNumber = Number(this.displayNumber)
+                this.makeOperation();
+                this.firstNumber = Number(this.displayNumber)
+                this.secondNumber = null
+                this.operation = operation
+            }else if(this.firstNumber){
+                this.operation = operation
+                this.secondNumber = Number(this.displayNumber)
+                this.makeOperation();
+                this.firstNumber = Number(this.displayNumber)
+                this.secondNumber = null
+            }else{
+                this.operation = operation
+                this.firstNumber = Number(this.displayNumber)
+            }
             this.clearDisplay = true
         },
+        btnPlusPressed(){
+            this.btnOperation("plus");
+        },
         btnMinusPressed(){
-            this.operation = "minus"
+            this.btnOperation("minus");
         },
         btnMultiplyPressed(){
-            this.operation = "multiply"
+            this.btnOperation("multiply");
         },
         btnDividePressed(){
-            this.operation = "divide"
+            this.btnOperation("divide");
         },
         btnPercentagePressed(){
-            this.operation = "percentage"
+            this.btnOperation("percentage");
         },
         btnSquareRootPressed(){
-            this.operation = "square_root"
+            //this.btnOperation("square_root");
+            if(!this.isOn || this.displayNumber == "0") return;
+            this.displayNumber = String(Math.sqrt( this.displayNumber ));
+            this.clearDisplay = true;
         },
         btnMusicPressed(){},
         btnDotPressed(){},
         btnEqualPressed(){
             this.secondNumber = Number(this.displayNumber);
-
+            this.makeOperation()
+            this.clearDisplay = true;
+            this.resetVariables();
+        },
+        makeOperation(){
             switch(this.operation){
                 case "plus":
                     this.displayNumber = String(this.firstNumber + this.secondNumber);
+                    break;
+                case "minus":
+                    this.displayNumber = String(this.firstNumber - this.secondNumber);
+                    break;
+                case "multiply":
+                    this.displayNumber = String(this.firstNumber * this.secondNumber);
+                    break;
+                case "divide":
+                    this.displayNumber = String(this.firstNumber / this.secondNumber);
+                    break;
+                case "percentage":
+                    this.displayNumber = String((this.firstNumber * this.secondNumber) / 100);
+                    break;
+                case "square_root":
+                    this.displayNumber = String(this.firstNumber + this.secondNumber);
+                    break;
             }
-
-            this.clearDisplay = true;
-            this.resetVariables();
         },
         resetVariables(){
             this.firstNumber = null;
